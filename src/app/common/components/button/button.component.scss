@@ -1,0 +1,47 @@
+.btn {
+  border-radius: 3px;
+  background-color: #007bff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+  color: #fff;
+  text-align: center;
+  padding: 9px 25px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: "Playfair Display', serif";
+  font-size: 15px;
+  outline: none;
+  transition: background 0.2s ease-in-out;
+  &.rounded {
+    border-radius: 20px !important;
+  }
+  &.button-flex {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  &:hover {
+    border: 1px solid #007bff;
+    color: #fff;
+  }
+
+  .icon {
+    padding: 0 0.75rem 0 0;
+    order: 1;
+  }
+  &_outline {
+    border: 1px solid #007bff;
+    background-color: transparent;
+    color: #007bff;
+    &:focus {
+      background-color: transparent;
+    }
+  
+    &:hover {
+      color: #007bff;
+      border: 1px solid #007bff;
+      background-color: transparent;
+    }
+
+  }
+
+}

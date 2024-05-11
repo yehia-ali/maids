@@ -1,0 +1,57 @@
+.table {
+  thead {
+    th {
+      color: #7F8C8D;
+      font-family: "Playfair Display', serif";
+      font-size: 12px;
+      border: none;    
+    }
+  }
+  tbody {
+    tr {
+      &.active {
+        > * {
+          background-color: rgb(0, 59, 122);
+        }
+        td {
+          span {
+            color: #fff;
+          }
+        }
+      }
+      &:hover {
+        > * {
+          cursor: pointer;
+          background-color: rgba(0, 59, 122,0.05);
+        }
+        td {
+          &:first-of-type {
+            border-radius: 10px 0  0 10px;
+          }
+          &:last-of-type {
+            border-radius:  0  10px 10px 0;
+
+          }
+        }
+
+      }
+      &:last-of-type {
+        border: none;
+        td {
+          border: none;
+        }
+      }
+
+      td {
+        margin-block: 10px;
+        padding-block: 10px;
+        span {
+          margin-inline-start: 10px;
+          color: #34495E;
+          font-family: "Playfair Display', serif";
+          font-size: 15px;        
+        }
+      }
+    }
+  }
+}

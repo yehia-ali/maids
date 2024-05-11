@@ -1,0 +1,25 @@
+<button
+  class="btn"
+  [class]="class"
+  [class.btn_disabled]="disabled"
+  [type]="type"
+  [id]="id"
+  [value]="value"
+  [disabled]="disabled"
+  [style.cursor]="disabled ? 'not-allowed' : ''"
+  [style.background-color]="'var(' + bgColor + ')'"
+  [style.color]="'var(' + fontColor + ')'"
+  [style.border-color]="'var(' + (borderColor || bgColor) + ')'"
+  [style.border-radius]="'var(' + radiusSize + ')'"
+  [style.padding]="paddingSize">
+  <app-image
+    [image]="image"
+    [alt]="value"
+    [widthImg]="'20px'"
+    [class]="'image-icon'"
+    *ngIf="showImage"></app-image>
+  <ng-container *ngIf="value">
+    {{ value }}
+  </ng-container>
+  <i *ngIf="icon" class="icon" [class]="icon"></i>
+</button>

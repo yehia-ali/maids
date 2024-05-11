@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-3">
+    <div class="container-xl">
+      <!-- Logo -->
+      <a class="navbar-brand" routerLink="'/users'">
+        <app-image [image]="'./assets/maids.svg'" [alt]="'maids'"></app-image>
+      </a>
+      <!-- Navbar toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <!-- Nav -->
+        <div class="navbar-nav ms-lg-auto">
+          <a class="nav-item nav-link active" routerLink="'/users'" routerLinkActive="active"  aria-current="page">users</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

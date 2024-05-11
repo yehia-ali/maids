@@ -1,0 +1,10 @@
+<div class="flex">
+  <div class="alert" [class]="'alert'+'-'+class + ' ' + status">
+    <i *ngIf="icon" class="icon" [class]="icon">i</i>
+    <div class="content">
+      <p *ngIf="message" class="message m-0">
+        {{ message }}
+      </p>
+    </div>
+  </div>
+</div>

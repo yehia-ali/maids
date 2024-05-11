@@ -1,0 +1,74 @@
+@if (isloading) {
+<app-spinner></app-spinner>
+
+} @else {
+
+<section class="breadcrumb-section bg-gray">
+  <div class="container">
+    <div class="row">
+      <app-breadcrumb [breadCrumbStack]="breadCrumbData"></app-breadcrumb>
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-6 col-md-3 col-xl-2">
+        <h1>Users List</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="table-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="tabel-block">
+          <app-table
+            [headers]="usersTableStrcture.headers"
+            [body]="allUsersData?.data"
+          >
+            @for (user of allUsersData?.data | paginate: { itemsPerPage: allUsersData.per_page, currentPage: allUsersData.page, totalItems: allUsersData.total }; track user) {
+            <tr class="tr">
+              <td
+                class="td"
+                [title]="user?.first_name + ' ' + user?.last_name || '-'"
+              >
+                <app-image
+                  [class]="'circle-image'"
+                  [image]="user?.avatar"
+                  [alt]="user?.first_name + ' ' + user?.last_name"
+                ></app-image>
+              </td>
+              <td>{{ user.id }}</td>
+              <td>
+                {{ user?.first_name }}
+              </td>
+              <td>
+                {{ user?.last_name }}
+              </td>
+              <td class="td" [title]="user?.id || '-'">
+                <div class="actions text-end">
+                  <app-button
+                    [type]="'button'"
+                    [class]="'btn_outline'"
+                    [id]="'edit-btn' + user?.id"
+                    [paddingSize]="'9px 15px'"
+                    [showImage]="true"
+                    [image]="'/assets/details.png'"
+                    [routerLink]="'/users/' + (user?.id || '')"
+                  >
+                  </app-button>
+                </div>
+              </td>
+            </tr>
+            } @empty {
+            <p class="text-center">No items found</p>
+            }
+          </app-table>
+        </div>
+        <div class="text-center mt-5">
+            <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+}

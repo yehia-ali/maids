@@ -1,0 +1,8 @@
+.img {
+  vertical-align: middle;
+  &.circle-image {
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+  }
+}

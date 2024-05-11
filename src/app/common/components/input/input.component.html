@@ -1,0 +1,55 @@
+<div
+  [formGroup]="formGroup"
+  class="input-container"
+  [style.background-color]="backgroundColor"
+  [style.border-radius]="borderRadius"
+>
+  <label
+    [for]="id"
+    [style.display]="isLabelShown && label ? 'block' : 'none'"
+    class="form-label"
+  >
+    {{ label }}
+  </label>
+  <input
+    [formControlName]="inputFormControlName"
+    [style.cursor]="disabled ? 'not-allowed' : ''"
+    [style.background-color]="backgroundInput"
+    [style.text-align]="textAlign"
+    [style.border]="border"
+    [style.border-radius]="borderRadius"
+    [id]="id"
+    [class]="class"
+    [class.error]="
+      controlName().invalid && controlName().dirty && controlName().touched
+    "
+    [type]="type"
+    [name]="name"
+    [placeholder]="placeholder"
+    [min]="min"
+    [max]="max"
+    [attr.minlength]="minlength"
+    [attr.maxlength]="maxlength"
+    [checked]="checked"
+    [required]="required"
+    [readonly]="readonly || disabled"
+    [autocomplete]="autocomplete"
+    [autofocus]="autofocus"
+    [value]="value"
+    [attr.inputmode]="inputMode"
+    class="form-control"
+    id="validationCustom03"
+    required
+  />
+</div>
+<div
+  class="invalid-feedback"
+  [style.display]="
+    controlName().invalid && (controlName().dirty || controlName().touched)
+      ? 'block'
+      : 'none'
+  "
+  *ngFor="let err of controlName().errors | keyvalue"
+>
+  {{ errorMessages[err.key] }}
+</div>

@@ -1,0 +1,13 @@
+.breadcrumb {
+    li {
+      &::before {
+        color: #34495E;
+      }
+      a {
+        color: #007bff;
+        font-family: "Playfair Display', serif";
+        font-size: 12px;
+        text-decoration: none;
+      }
+    }
+}

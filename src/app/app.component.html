@@ -1,0 +1,23 @@
+<div class="position-fixed">
+  <app-toastr
+    *ngIf="toastrData.title || toastrData.message"
+    [title]="toastrData.title"
+    [message]="toastrData.message"
+    [status]="'top right'"
+    [class]="toastrData.type || 'error'"></app-toastr>
+
+  <ng-container *ngFor="let error of toastrErrors | keyvalue">
+    <app-toastr
+      *ngIf="error?.value?.length"
+      [title]="error?.key"
+      [message]="error?.value"
+      [status]="'top right'"
+      [class]="'error'"></app-toastr>
+  </ng-container>
+</div>
+<app-header></app-header>
+<div class="p-5 bg-surface-secondary min-vh-100">
+  <div class="container-xl">
+    <router-outlet></router-outlet>
+  </div>
+</div>
